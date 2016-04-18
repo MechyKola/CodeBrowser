@@ -90,7 +90,7 @@ namespace CodeBrowser
 			var InputArray = Text.input.ToCharArray();
 			foreach (char element in InputArray)
 			{
-				if (element == ';' )
+				if (element == ';' || element == '{' || element == '}')
 				{
 					//results = String.Concat (results, element);
 					results += element.ToString();
