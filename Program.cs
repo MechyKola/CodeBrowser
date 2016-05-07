@@ -87,8 +87,7 @@ namespace CodeBrowser
 	
 		public static void PrintAns(string file)
 		{
-			var InputArray = Text.input.ToCharArray();
-			foreach (char element in InputArray)
+			foreach ( var c in text.input)
 			{
 				if (element == ';' || element == '{' || element == '}')
 				{
