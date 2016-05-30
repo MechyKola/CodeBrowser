@@ -76,7 +76,7 @@ namespace CodeBrowser
 		public static void PathInvalid()//prints error message about invalid path
 		{
 			Console.WriteLine("File not found or invalid path" +
-				" \n or no permission to view file");
+			                  " \n or no permission to view file");
 		}
 	}
 
@@ -84,16 +84,16 @@ namespace CodeBrowser
 	{
 		public static string results { get; set; }
 		public static string text { get; set; }
-	
+
 		public static void PrintAns(string file)
 		{
 			foreach ( var c in Text.input)
 			{
-				if (element == ';' || element == '{' || element == '}')
+				if (c == ';' || c == '{' || c == '}')
 				{
 					//results = String.Concat (results, element);
-					results += element.ToString();
-					Console.WriteLine (element);
+					results += c.ToString();
+					Console.WriteLine (c);
 				}
 			}
 		}
