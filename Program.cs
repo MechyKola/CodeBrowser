@@ -1,3 +1,5 @@
+using System;
+
 namespace CodeBrowser
 {
 	class Program //main program class
@@ -7,14 +9,22 @@ namespace CodeBrowser
 			Console.WriteLine ("This program tests code to" +  //explain functionality
 								" analyse its structure");
 
-			Text.GetFile ();//get file
+			for (;;) 
+			{
+				Text.GetFile ();//get file
 
-			//Console.WriteLine (Analysis.results); //print the results of the analysis
-			//once programmodified to include results variable
+				//Console.WriteLine (Analysis.results); //print the results of the analysis
+				//once program modified to include results variable
 
-			Console.WriteLine ("Press 1 to repeat process, " + 
-			                   "or any other key to terminate...");//let user acknowledge results
-			Console.Read ();
+				Console.WriteLine ("Press 1 to repeat process, " + 
+					"or any other key to terminate...");//let user acknowledge results
+
+				string cont = Console.ReadLine ();
+				if ( cont != "1") 
+				{
+					break;
+				}
+			}
 		}
 	}
 	class Text //basically the functions and variables
@@ -93,7 +103,7 @@ namespace CodeBrowser
 					Console.WriteLine (c);
 				}
 				Console.WriteLine ("This is for debugging");
-				Console.Write(c) //comment out in release
+				Console.Write (c); //comment out in release
 			}
 		}
 	}
