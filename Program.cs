@@ -1,22 +1,19 @@
-using System;
-
 namespace CodeBrowser
 {
 	class Program //main program class
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("This program tests code to"); //explain functionality
-			Console.WriteLine ("analyse its structure");
+			Console.WriteLine ("This program tests code to" +  //explain functionality
+								" analyse its structure");
 
 			Text.GetFile ();//get file
-
-			Console.WriteLine (Text.input); //this is just a test, comment out in future revision
 
 			//Console.WriteLine (Analysis.results); //print the results of the analysis
 			//once programmodified to include results variable
 
-			Console.WriteLine ("Press any key to terminate...");//let user acknowledge results
+			Console.WriteLine ("Press 1 to repeat process, " + 
+			                   "or any other key to terminate...");//let user acknowledge results
 			Console.Read ();
 		}
 	}
@@ -95,6 +92,8 @@ namespace CodeBrowser
 					results += c.ToString();
 					Console.WriteLine (c);
 				}
+				Console.WriteLine ("This is for debugging");
+				Console.Write(c) //comment out in release
 			}
 		}
 	}
