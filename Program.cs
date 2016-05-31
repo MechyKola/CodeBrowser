@@ -42,7 +42,7 @@ namespace CodeBrowser
 			{
 				Console.WriteLine ("Please enter the address and name " + 
 				                   "of the text file you want to analyse" +
-				                   "\nPlease Note: enter the adress in the fromat " +
+				                   "\nPlease Note: enter the address in the fromat " +
 				                   " path/file.txt starting at the bin folder of program");
 				String Path = Console.ReadLine ();
 				bool pathStatus = PathCheck (Path);
