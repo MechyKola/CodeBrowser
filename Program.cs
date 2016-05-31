@@ -13,9 +13,6 @@ namespace CodeBrowser
 			{
 				Text.GetFile ();//get file
 
-				//Console.WriteLine (Analysis.results); //print the results of the analysis
-				//once program modified to include results variable
-
 				Console.WriteLine ("Press 1 to repeat process, " + 
 					"or any other key to terminate...");//let user acknowledge results
 
