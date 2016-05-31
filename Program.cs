@@ -7,11 +7,12 @@ namespace CodeBrowser
 		public static void Main (string[] args)
 		{
 			Console.WriteLine ("This program tests code to" +  //explain functionality
-								" analyse its structure");
+			                   " analyse its structure");
 
 			for (;;) 
 			{
 				Text.GetFile ();//get file
+				Analysis.PrintAns (Text.input);
 
 				Console.WriteLine ("Press 1 to repeat process, " + 
 					"or any other key to terminate...");//let user acknowledge results
@@ -91,6 +92,7 @@ namespace CodeBrowser
 
 		public static void PrintAns(string file)
 		{
+			Console.WriteLine("\n"+file+"\n");
 			foreach ( var c in Text.input)
 			{
 				if (c == ';' || c == '{' || c == '}')
@@ -99,9 +101,8 @@ namespace CodeBrowser
 					results += c.ToString();
 					Console.WriteLine (c);
 				}
-				Console.WriteLine ("This is for debugging");
-				Console.Write (c); //comment out in release
 			}
+			Console.WriteLine ();
 		}
 	}
 }
