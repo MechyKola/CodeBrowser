@@ -7,14 +7,16 @@ namespace CodeBrowser
 		public static void Main (string[] args)
 		{
 			Console.WriteLine ("This program tests code to" +  //explain functionality
-								" analyse its structure");
+			                   " analyse its structure");
+
+			//Console.WriteLine (Analysis.results); //print the results of the analysis
+			//once program modified to include results variable
+
 
 			for (;;) 
 			{
 				Text.GetFile ();//get file
-
-				//Console.WriteLine (Analysis.results); //print the results of the analysis
-				//once program modified to include results variable
+				Analysis.PrintAns (Text.input);
 
 				Console.WriteLine ("Press 1 to repeat process, " + 
 					"or any other key to terminate...");//let user acknowledge results
@@ -44,7 +46,7 @@ namespace CodeBrowser
 			{
 				Console.WriteLine ("Please enter the address and name " + 
 				                   "of the text file you want to analyse" +
-				                   "\nPlease Note: enter the adress in the fromat " +
+				                   "\nPlease Note: enter the address in the fromat " +
 				                   " path/file.txt starting at the bin folder of program");
 				String Path = Console.ReadLine ();
 				bool pathStatus = PathCheck (Path);
@@ -94,6 +96,7 @@ namespace CodeBrowser
 
 		public static void PrintAns(string file)
 		{
+			Console.WriteLine("\n"+file+"\n");
 			foreach ( var c in Text.input)
 			{
 				if (c == ';' || c == '{' || c == '}')
@@ -102,9 +105,8 @@ namespace CodeBrowser
 					results += c.ToString();
 					Console.WriteLine (c);
 				}
-				Console.WriteLine ("This is for debugging");
-				Console.Write (c); //comment out in release
 			}
+			Console.WriteLine ();
 		}
 	}
 }
