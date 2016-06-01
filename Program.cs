@@ -1,5 +1,3 @@
-using System;
-
 namespace CodeBrowser
 {
 	class Program //main program class
@@ -12,12 +10,15 @@ namespace CodeBrowser
 			//Console.WriteLine (Analysis.results); //print the results of the analysis
 			//once program modified to include results variable
 
-
+			AskForFile ();
+		}
+		public static void AskForFile()
+		{
 			for (;;) 
 			{
 				Text.GetFile ();//get file
 				Analysis.PrintAns (Text.input);
-
+					
 				Console.WriteLine ("Press 1 to repeat process, " + 
 					"or any other key to terminate...");//let user acknowledge results
 
@@ -25,7 +26,7 @@ namespace CodeBrowser
 				if ( cont != "1") 
 				{
 					break;
-				}
+				}				
 			}
 		}
 	}
