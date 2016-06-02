@@ -97,7 +97,8 @@ namespace CodeBrowser
 
 		public static void PrintAns(string file)
 		{
-			Console.WriteLine("\n"+file+"\n");
+			Console.WriteLine("\n"+file+
+			                  "\n \nThe original file is above, the result is below\n");
 			foreach ( var c in Text.input)
 			{
 				if (c == ';' || c == '{' || c == '}')
