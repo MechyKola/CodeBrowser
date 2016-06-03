@@ -1,3 +1,5 @@
+using System;
+
 namespace CodeBrowser
 {
 	class Program //main program class
@@ -10,30 +12,31 @@ namespace CodeBrowser
 			//Console.WriteLine (Analysis.results); //print the results of the analysis
 			//once program modified to include results variable
 
-			AskForFile ();
-		}
-		public static void AskForFile()
-		{
-			for (;;) 
-			{
-				Text.GetFile ();//get file
-				Analysis.PrintAns (Text.input);
-					
-				Console.WriteLine ("Press 1 to repeat process, " + 
-					"or any other key to terminate...");//let user acknowledge results
-
-				string cont = Console.ReadLine ();
-				if ( cont != "1") 
-				{
-					break;
-				}				
-			}
+			Text.AskForFile ();
 		}
 	}
 	class Text //basically the functions and variables
 	{
 		public static string input { get; set; }
 		public static string address { get; set; }
+
+		public static void AskForFile()
+		{
+			for (;;) 
+			{
+				Text.GetFile ();//get file
+				Analysis.PrintAns (Text.input);
+
+				Console.WriteLine ("Press 1 to repeat process, " + 
+				                   "or any other key to terminate...");//let user acknowledge results
+
+				string cont = Console.ReadLine ();
+				if ( cont != "1") 
+				{
+					break;//exit script if user does not enter 1
+				}
+			}
+		}
 
 		public static void GetFile()//completes full access of file
 		{
@@ -78,7 +81,7 @@ namespace CodeBrowser
 			} 
 			else 
 			{
-				PathInvalid ();
+				PathInvalid ();//error message
 				Console.WriteLine ("An error has occurred");
 			}
 		}
@@ -97,9 +100,10 @@ namespace CodeBrowser
 
 		public static void PrintAns(string file)
 		{
-			Console.WriteLine("\n"+file+
+			Console.WriteLine("\n"+file+ //user desciption
 			                  "\n \nThe original file is above, the result is below\n");
-			foreach ( var c in Text.input)
+
+			foreach ( var c in Text.input)//creates an checks array of characters in the file
 			{
 				if (c == ';' || c == '{' || c == '}')
 				{
@@ -108,7 +112,7 @@ namespace CodeBrowser
 					Console.WriteLine (c);
 				}
 			}
-			Console.WriteLine ();
+			Console.WriteLine ();//extra line for clarity
 		}
 	}
 }
